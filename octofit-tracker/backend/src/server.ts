@@ -11,7 +11,7 @@ import workoutsRouter from './routes/workouts.js';
 const apiPort = 8000;
 const codespaceName = process.env.CODESPACE_NAME;
 const apiBaseUrl = codespaceName
-  ? `https://${codespaceName}-${apiPort}.app.github.dev`
+  ? `https://${codespaceName}-8000.app.github.dev`
   : `http://localhost:${apiPort}`;
 
 const app = express();
