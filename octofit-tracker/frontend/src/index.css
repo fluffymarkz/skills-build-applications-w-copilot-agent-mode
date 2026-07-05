@@ -1,0 +1,27 @@
+:root {
+  color: #344054;
+  background: #f5f7f3;
+  font-synthesis: none;
+  font: 16px/1.5 Georgia, 'Times New Roman', serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+.nav-link,
+.summary-chip,
+th {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+}

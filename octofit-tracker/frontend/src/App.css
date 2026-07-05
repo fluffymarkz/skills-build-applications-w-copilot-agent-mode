@@ -1,0 +1,118 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #12343b 0%, #1d5c63 58%, #e98f45 100%);
+  color: #fff;
+  padding: 28px clamp(18px, 4vw, 56px);
+}
+
+.brand-lockup {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #f6f0df;
+  border-radius: 8px;
+  color: #12343b;
+  display: inline-flex;
+  font-weight: 800;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+
+.brand-title {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.section-label {
+  color: #c26f32;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-header .section-label {
+  color: #f6d7b8;
+}
+
+.app-header .nav-link {
+  color: #fff;
+  font-weight: 700;
+}
+
+.app-header .nav-link:hover,
+.app-header .nav-link:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.app-header .nav-link.active {
+  background: #f6f0df;
+  color: #12343b;
+}
+
+.app-main {
+  padding: clamp(22px, 4vw, 56px);
+}
+
+.data-page {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.data-page h1 {
+  color: #12343b;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.summary-chip {
+  background: #e7f0ea;
+  border: 1px solid #c3d8cb;
+  border-radius: 8px;
+  color: #1e5a3f;
+  font-weight: 800;
+  padding: 10px 14px;
+}
+
+.placeholder-panel,
+.empty-panel {
+  padding: 28px;
+}
+
+.placeholder-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.empty-panel {
+  color: #667085;
+  font-weight: 700;
+}
+
+.table {
+  min-width: 780px;
+}
+
+.table thead th {
+  background: #f6f0df;
+  color: #12343b;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.table tbody td {
+  color: #344054;
+}
