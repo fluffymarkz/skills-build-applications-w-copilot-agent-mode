@@ -1,8 +1,8 @@
 import { useCollection } from '../api'
 import DataTable from './DataTable'
 
-function DataPage({ columns, emptyMessage, resourceName, title }) {
-  const { data, error, loading } = useCollection(resourceName)
+function DataPage({ columns, emptyMessage, resourceName, resourceUrl, title }) {
+  const { data, error, loading } = useCollection(resourceName, resourceUrl)
 
   return (
     <section className="data-page">

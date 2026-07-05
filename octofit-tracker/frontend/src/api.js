@@ -38,7 +38,7 @@ function normalizeCollectionResponse(payload, resourceName) {
   return []
 }
 
-export function useCollection(resourceName) {
+export function useCollection(resourceName, resourceUrl = getApiUrl(resourceName)) {
   const [state, setState] = useState({
     data: [],
     error: null,
@@ -52,7 +52,7 @@ export function useCollection(resourceName) {
       setState({ data: [], error: null, loading: true })
 
       try {
-        const response = await fetch(getApiUrl(resourceName), {
+        const response = await fetch(resourceUrl, {
           signal: controller.signal,
         })
 
@@ -76,7 +76,7 @@ export function useCollection(resourceName) {
     loadCollection()
 
     return () => controller.abort()
-  }, [resourceName])
+  }, [resourceName, resourceUrl])
 
   return state
 }

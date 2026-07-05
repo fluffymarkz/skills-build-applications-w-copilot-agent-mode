@@ -1,5 +1,10 @@
 import DataPage from './DataPage'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const activitiesUrl = codespaceName
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
   dateStyle: 'medium',
   timeStyle: 'short',
@@ -22,6 +27,7 @@ function Activities() {
     <DataPage
       title="Activities"
       resourceName="activities"
+      resourceUrl={activitiesUrl}
       columns={columns}
       emptyMessage="No activities have been logged yet."
     />

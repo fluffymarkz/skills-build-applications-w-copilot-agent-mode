@@ -1,5 +1,10 @@
 import DataPage from './DataPage'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const usersUrl = codespaceName
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/`
+  : 'http://localhost:8000/api/users/'
+
 const columns = [
   { header: 'Name', key: 'name' },
   { header: 'Email', key: 'email' },
@@ -14,6 +19,7 @@ function Users() {
     <DataPage
       title="Users"
       resourceName="users"
+      resourceUrl={usersUrl}
       columns={columns}
       emptyMessage="No users have been added yet."
     />

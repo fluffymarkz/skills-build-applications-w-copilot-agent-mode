@@ -1,5 +1,10 @@
 import DataPage from './DataPage'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const workoutsUrl = codespaceName
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+  : 'http://localhost:8000/api/workouts/'
+
 const columns = [
   { header: 'Workout', key: 'title' },
   { header: 'Focus', key: 'focusArea' },
@@ -13,6 +18,7 @@ function Workouts() {
     <DataPage
       title="Workouts"
       resourceName="workouts"
+      resourceUrl={workoutsUrl}
       columns={columns}
       emptyMessage="No workout recommendations are available yet."
     />
