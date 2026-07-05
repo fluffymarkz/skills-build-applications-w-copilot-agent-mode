@@ -1,7 +1,9 @@
-export function getApiBaseUrl(port = 8000) {
+export const API_PORT = 8000;
+
+export function getApiBaseUrl() {
   const codespaceName = process.env.CODESPACE_NAME;
 
   return codespaceName
-    ? `https://${codespaceName}-${port}.app.github.dev`
-    : `http://localhost:${port}`;
+    ? `https://${codespaceName}-${API_PORT}.app.github.dev`
+    : `http://localhost:${API_PORT}`;
 }

@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
-import { getApiBaseUrl } from './config/apiUrl.js';
+import { API_PORT, getApiBaseUrl } from './config/apiUrl.js';
 import './config/database.js';
 import activitiesRouter from './routes/activities.js';
 import leaderboardRouter from './routes/leaderboard.js';
@@ -10,8 +10,7 @@ import usersRouter from './routes/users.js';
 import workoutsRouter from './routes/workouts.js';
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
-const apiBaseUrl = getApiBaseUrl(port);
+const apiBaseUrl = getApiBaseUrl();
 
 app.use(cors());
 app.use(express.json());
@@ -26,7 +25,7 @@ app.use('/api/activities', activitiesRouter);
 app.use('/api/leaderboard', leaderboardRouter);
 app.use('/api/workouts', workoutsRouter);
 
-app.listen(port, () => {
-  console.log(`OctoFit Tracker API running on port ${port}`);
+app.listen(API_PORT, () => {
+  console.log(`OctoFit Tracker API running on port ${API_PORT}`);
   console.log(`API base URL: ${apiBaseUrl}`);
 });
